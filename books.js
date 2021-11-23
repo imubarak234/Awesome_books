@@ -100,6 +100,13 @@ function setForm() {
       addBook(adding.title, adding.author);
     });
   }
+  const reload = document.querySelectorAll('.removebutton');
+  reload.forEach((element) => {
+    element.addEventListener('click', () => {
+      removeBook(element.getAttribute('id'));
+      populate();
+    });
+  });
 }
 
 if (!localStorage.getItem('instance')) {
