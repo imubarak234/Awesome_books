@@ -81,7 +81,6 @@ function populate() {
     figures: [],
   };
 
-  console.log(...bookList);
   instances.figures.push(...bookList);
   localStorage.setItem('instances', JSON.stringify(instances));
 }
@@ -109,7 +108,7 @@ function setForm() {
   const reload = document.querySelectorAll('.removebutton');
   reload.forEach((element) => {
     element.addEventListener('click', () => {
-      if (element.getAttribute('id')){
+      if (element.getAttribute('id')) {
         removeBook(element.getAttribute('id'));
       }
       populate();
