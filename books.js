@@ -62,6 +62,14 @@ function setForm(){
   });
 }
 
+function populate() {
+  const instances = {
+    figures: []
+  };
+
+  instances.figures.push(...bookList);
+  localStorage.setItem('instances', JSON.stringify(instances));
+}
 
 
 
