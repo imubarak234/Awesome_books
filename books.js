@@ -1,20 +1,21 @@
 const bookList = [];
 
-class books {
-  constructor(title, author){
+class Books {
+  constructor(title, author) {
     this.title = title;
     this.author = author;
   }
 }
 
 const section = document.querySelector('.bookings');
+let count = 0;
 
-function addBook(title, author){
-  let booky = new books(title, author);
+function addBook(Title, Author) {
+  const booky = new Books(Title, Author);
   bookList.push(booky);
 
   const container = document.createElement('div');
-  const names = document.createElement('h4');
+  const names = document.createElement('h3');
   const authors = document.createElement('h4');
   const button = document.createElement('button');
   const line = document.createElement('span');
@@ -25,68 +26,86 @@ function addBook(title, author){
   container.append(button);
   container.append(line);
 
+  const counting = `count${count}`;
+  const buttoning = `button${count}`;
+
   container.setAttribute('class', 'booksection');
+  container.setAttribute('id', counting);
   names.innerText = booky.title;
   authors.innerText = booky.author;
   button.setAttribute('class', 'removebutton');
+  button.setAttribute('id', buttoning);
   button.innerHTML = 'Remove';
   line.setAttribute('class', 'line');
+  count += 1;
 }
 
-function removeBook(book){
-  for(let x = 0; x < bookList.length; x++){
-    if(bookList[x] === book){
-      bookList.splice(x,1);
+function removeList(name, author) {
+  for (let x = 0; x < bookList.length; x += 1) {
+    if ((bookList[x].title === name) && (bookList[x].author === author)) {
+      bookList.splice(x, 1);
     }
   }
+}
+
+function removeBook(args) {
+  const removing = document.querySelectorAll('.removebutton');
+  let count1 = 0;
+  removing.forEach(() => {
+    if (args === (`button${count1}`)) {
+      const ids = `count${count1}`;
+      const nam = `#count${count1} h3`;
+      const auth = `#count${count1} h4`;
+      const nodes = document.getElementById(ids);
+      const names = document.querySelector(nam);
+      const author = document.querySelector(auth);
+      removeList(names.innerHTML, author.innerHTML);
+      nodes.parentNode.removeChild(nodes);
+    }
+    count1 += 1;
+  });
 }
 
 const next = document.getElementById('addButton');
 const forms = document.getElementById('formAdd');
 
- forms.addEventListener('submit', (event) => {
+forms.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log('why');
-  //addBook(forms.elements.title.value, forms.elements.author.value);
 });
-
-next.addEventListener('click', (event) => {
-  addBook(forms.elements.title.value, forms.elements.author.value);
-});
-
-function setForm(){
-  const restore = JSON.parse(localStorage.getItem('instances'));
-  if(restore)
-  restore.figures.forEach(adding => {
-    addBook(adding.title, adding.author);
-  });
-}
 
 function populate() {
   const instances = {
-    figures: []
+    figures: [],
   };
 
   instances.figures.push(...bookList);
   localStorage.setItem('instances', JSON.stringify(instances));
 }
 
-if(!localStorage.getItem('instance')) {
-  console.log('wliekbe');
-  setForm();
-} else {
-  console.log('youtube');
-  //setForm();
+next.addEventListener('click', () => {
+  addBook(forms.elements.title.value, forms.elements.author.value);
+  const next1 = document.querySelectorAll('.removebutton');
+  next1.forEach((element) => {
+    element.addEventListener('click', () => {
+      removeBook(element.getAttribute('id'));
+      populate();
+    });
+  });
+});
+
+function setForm() {
+  const restore = JSON.parse(localStorage.getItem('instances'));
+  if (restore) {
+    restore.figures.forEach((adding) => {
+      addBook(adding.title, adding.author);
+    });
+  }
 }
 
-next.addEventListener('click', (event) => {
-  console.log('test');
+if (!localStorage.getItem('instance')) {
+  setForm();
+}
+
+next.addEventListener('click', () => {
   setTimeout(populate(), 100);
-})
-
-
-
-
-
-
-
+});
