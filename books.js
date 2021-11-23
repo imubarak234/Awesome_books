@@ -44,26 +44,22 @@ function removeBook(book){
 const next = document.getElementById('addButton');
 const forms = document.getElementById('formAdd');
 
-forms.addEventListener('submit', (event) => {
+ forms.addEventListener('submit', (event) => {
   event.preventDefault();
+  console.log('why');
+  //addBook(forms.elements.title.value, forms.elements.author.value);
+});
+
+next.addEventListener('click', (event) => {
   addBook(forms.elements.title.value, forms.elements.author.value);
 });
 
 function setForm(){
-  const restore = JSON.parse(localStorage.getItem('intances'));
-
-  restore.figures.forEach(element => {
-    addBook(element.title, element.author);
+  const restore = JSON.parse(localStorage.getItem('instances'));
+  if(restore)
+  restore.figures.forEach(adding => {
+    addBook(adding.title, adding.author);
   });
-}
-
-function populate() {
-  const instances = {
-    figures: [...bookList]
-  };
-
-  localStorage.setItem('instances', JSON.stringify(instances));
-  setForm();
 }
 
 
