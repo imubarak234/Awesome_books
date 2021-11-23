@@ -44,6 +44,7 @@ function removeList(name, author) {
   for (let x = 0; x < bookList.length; x += 1) {
     if ((bookList[x].title === name) && (bookList[x].author === author)) {
       bookList.splice(x, 1);
+      break;
     }
   }
 }
@@ -80,6 +81,7 @@ function populate() {
     figures: [],
   };
 
+  console.log(...bookList);
   instances.figures.push(...bookList);
   localStorage.setItem('instances', JSON.stringify(instances));
 }
@@ -91,8 +93,8 @@ next.addEventListener('click', () => {
     element.addEventListener('click', () => {
       if (element.getAttribute('id')) {
         removeBook(element.getAttribute('id'));
-        populate();
       }
+      populate();
     });
   });
 });
@@ -107,7 +109,9 @@ function setForm() {
   const reload = document.querySelectorAll('.removebutton');
   reload.forEach((element) => {
     element.addEventListener('click', () => {
-      removeBook(element.getAttribute('id'));
+      if (element.getAttribute('id')){
+        removeBook(element.getAttribute('id'));
+      }
       populate();
     });
   });
