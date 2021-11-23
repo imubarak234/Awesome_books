@@ -49,9 +49,8 @@ function removeList(name, author) {
 }
 
 function removeBook(args) {
-  const removing = document.querySelectorAll('.removebutton');
   let count1 = 0;
-  removing.forEach(() => {
+  for (let x = 0; x < count; x += 1) {
     if (args === (`button${count1}`)) {
       const ids = `count${count1}`;
       const nam = `#count${count1} h3`;
@@ -59,11 +58,14 @@ function removeBook(args) {
       const nodes = document.getElementById(ids);
       const names = document.querySelector(nam);
       const author = document.querySelector(auth);
-      removeList(names.innerHTML, author.innerHTML);
-      nodes.parentNode.removeChild(nodes);
+
+      if (nodes != null) {
+        removeList(names.innerHTML, author.innerHTML);
+        nodes.parentNode.removeChild(nodes);
+      }
     }
     count1 += 1;
-  });
+  }
 }
 
 const next = document.getElementById('addButton');
@@ -83,12 +85,14 @@ function populate() {
 }
 
 next.addEventListener('click', () => {
-  addBook(forms.elements.title.value, forms.elements.author.value);
+  if (forms.elements.title.value !== '') addBook(forms.elements.title.value, forms.elements.author.value);
   const next1 = document.querySelectorAll('.removebutton');
   next1.forEach((element) => {
     element.addEventListener('click', () => {
-      removeBook(element.getAttribute('id'));
-      populate();
+      if (element.getAttribute('id')) {
+        removeBook(element.getAttribute('id'));
+        populate();
+      }
     });
   });
 });
