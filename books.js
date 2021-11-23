@@ -71,6 +71,20 @@ function populate() {
   localStorage.setItem('instances', JSON.stringify(instances));
 }
 
+if(!localStorage.getItem('instance')) {
+  console.log('wliekbe');
+  setForm();
+} else {
+  console.log('youtube');
+  //setForm();
+}
+
+next.addEventListener('click', (event) => {
+  console.log('test');
+  setTimeout(populate(), 100);
+})
+
+
 
 
 
