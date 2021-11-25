@@ -136,6 +136,7 @@ button {
   justify-content: end;
 }
 
-.hidden {
+.formsection,
+.contact-page {
   display: none ;
 }
