@@ -32,6 +32,10 @@
  color: black;
 }
 
+.menu-item li a:active {
+  color: red;
+}
+
 .menu-item li::after {
   content: '';
   border-right: 2px solid black;
