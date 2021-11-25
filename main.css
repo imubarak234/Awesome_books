@@ -9,6 +9,35 @@
   display: flex;
 }
 
+.menu {
+  font-size: 1em;
+  justify-content: space-around;
+  border: 3px solid;
+  margin: 20px 50px 50px ;
+  height: 50px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.menu-item {
+  list-style: none;
+}
+
+.logo {
+  font-size: 20px;
+}
+
+.menu-item li a {
+ text-decoration: none;
+ color: black;
+}
+
+.menu-item li::after {
+  content: '';
+  border-right: 2px solid black;
+  margin: 10px ;
+}
+
 .direction {
   flex-direction: column;
 }
