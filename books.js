@@ -134,28 +134,33 @@ function addBook(Title, Author) {
   lists.add(booky.title, booky.author);
 
   const container = document.createElement('div');
+  const inner = document.createElement('div');
   const names = document.createElement('h3');
   const authors = document.createElement('h4');
+  const by = document.createElement('p');
   const button = document.createElement('button');
-  const line = document.createElement('span');
 
   section.append(container);
-  container.append(names);
-  container.append(authors);
+  container.append(inner);
+  inner.append(names);
+  inner.append(by);
+  inner.append(authors);
   container.append(button);
-  container.append(line);
 
   const counting = `count${count}`;
   const buttoning = `button${count}`;
 
+  if (count % 2 === 0) container.style.backgroundColor = '#808080';
+
   container.setAttribute('class', 'booksection');
   container.setAttribute('id', counting);
+  inner.setAttribute('class', 'flex');
   names.innerText = booky.title;
+  by.innerHTML = 'by';
   authors.innerText = booky.author;
   button.setAttribute('class', 'removebutton');
   button.setAttribute('id', buttoning);
   button.innerHTML = 'Remove';
-  line.setAttribute('class', 'line');
   count += 1;
 }
 

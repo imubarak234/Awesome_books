@@ -4,6 +4,24 @@
   padding: 0;
 }
 
+.flex,
+.booksection {
+  display: flex;
+}
+
+.direction {
+  flex-direction: column;
+}
+
+.arrange {
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
 form ul {
   list-style-type: none;
   padding: 0;
@@ -11,8 +29,57 @@ form ul {
 
 form li {
   margin-top: 1%;
+  padding-bottom: 5%;
 }
 
-section {
-  padding-left: 5%;
+main {
+  height: 100vh;
+}
+
+main .top {
+  margin-bottom: 10%;
+}
+
+.booksection {
+  width: 100%;
+  justify-content: space-between;
+  padding: 2% 4%;
+}
+
+.bookings {
+  width: 30%;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.line {
+  width: 40%;
+  margin-bottom: 6%;
+  border-bottom: 2px solid black;
+}
+
+.ending {
+  margin-top: 2%;
+}
+
+.ending h2 {
+  margin-bottom: 2%;
+}
+
+.booksection div {
+  width: auto;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.booksection div p {
+  width: auto;
+  margin: 0 3%;
+}
+
+.booksection div h3,
+.booksection div h4 {
+  font-size: 1em;
+  width: auto;
+  white-space: nowrap;
 }

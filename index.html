@@ -8,19 +8,18 @@
   <title>Awesome Books Website</title>
 </head>
 <body>
-  <main>
+  <main class="flex direction arrange">
   <section class="top">
     <h1>Awesome Books</h1>
   </section>
-  <section class="bookings">
-    <h2>
-      Books
-    </h2>
+  <section class="bookings flex direction">
+    <h2>All Awesome Books</h2>
   </section>
-  <section>
-    <h2>Add a Book</h2>
+  <section class="ending flex direction arrange">
+    <span class="line"></span>
+    <h2>Add a New Book</h2>
     <form id="formAdd" method="post">
-      <ul>
+      <ul class="flex direction arrange">
         <li class="form text">
           <input type="text" id="title" name="title" placeholder="Title" aria-required="true" required>
         </li>
