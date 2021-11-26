@@ -4,31 +4,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"></script>
   <link rel="stylesheet" href="./main.css">
   <title>Awesome Books Website</title>
 </head>
-<body>
-    
-    <section class="menu flex">
-      <div class="logo">Awesome Books</div>
-      <div>
-        <ul class="menu-item flex">
-          <li class="list"> 
-            <a href="#">List</a>
-          </li>
-          <li class="new">
-            <a href="#">Add New</a>
-          </li>
-          <li class="contact">
-            <a href="#">Contact</a>
-          </li>
-        </ul>
+<body> 
+    <div>
+      <div class="menu flex">
+        <div class="logo">Awesome Books</div>
+        <div>
+          <ul class="menu-item flex">
+            <li class="list"> 
+              <a href="#">List</a>
+            </li>
+            <li class="new">
+              <a href="#">Add New</a>
+            </li>
+            <li class="contact">
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </section>
+      <div class="time"><p></p></div>
+    </div>
   <main class="flex direction arrange">
-  <section class="top">
-    <h1>Awesome Books</h1>
-  </section>
+  
   <section class="bookings flex direction">
     <h2>All Awesome Books</h2>
   </section>
@@ -50,9 +51,9 @@
     </form>
   </section>
 
-  <section class="contact-page">
+  <section class="contact-page direction arrange">
 
-    <h1>Contact Information</h1>
+    <h2>Contact Information</h2>
 
     <div>
         <p>Do you have any questions or you just want to say "Hello"?</p>
@@ -68,7 +69,10 @@
 
 </section>
 </main>
-  <script src="./books.js"></script>
-  <script src="./function.js"></script>
+<footer>
+  <p>Copyright ©</p>
+</footer>
+<script src="./books.js"></script>
+<script src="./function.js"></script>
 </body>
 </html>
