@@ -4,9 +4,55 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .flex,
 .booksection {
   display: flex;
+}
+
+.menu {
+  font-size: 1em;
+  justify-content: space-around;
+  border: 3px solid;
+  margin: 20px 50px 0;
+  height: 50px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.time {
+  float: right;
+  margin: 0 50px;
+}
+
+.menu-item {
+  list-style: none;
+}
+
+.logo {
+  font-size: 20px;
+}
+
+.menu-item li a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-item li a:active {
+  color: red;
+}
+
+.menu-item li::after {
+  content: '';
+  border-right: 2px solid black;
+  margin: 10px;
 }
 
 .direction {
@@ -34,11 +80,7 @@ form li {
 }
 
 main {
-  height: 100vh;
-}
-
-main .top {
-  margin-bottom: 3%;
+  height: 70%;
 }
 
 .booksection {
@@ -101,4 +143,16 @@ button {
 
 .last {
   justify-content: end;
+}
+
+.formsection,
+.contact-page {
+  display: none;
+}
+
+footer {
+  border: 2px solid black;
+  justify-self: end;
+  padding: 2%;
+  margin: 0 2%;
 }
