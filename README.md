@@ -1,6 +1,7 @@
 # Awesome_books
 
 The awesome books web application is a simple book management system which manages the tasks of adding and removing books. The books are displayed on the page and removed when necessary.
+![Screenshot (20)](https://user-images.githubusercontent.com/71400898/146649615-b2553e92-30dc-4e70-9e00-eda5d1b55c0c.png) ![Screenshot (21)](https://user-images.githubusercontent.com/71400898/146649619-36014b3e-ccd7-41c7-99c3-1ad5fc1dd2d2.png)
 
 ## Built with
 HTML 
