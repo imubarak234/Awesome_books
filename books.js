@@ -123,6 +123,8 @@ class BookList2 {
   }
 }
 
+//#c4c4c4
+
 const lists = new BookList2();
 
 const section = document.querySelector('.bookings');
